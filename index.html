@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Jquery Thumbnail Generator</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/ecmascript" src="js/jquery.thumbnails.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.thumb').thumbnail();
+            $('.thumb1').thumbnail({
+                width:200,
+                height:200,
+                align:'middle'
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <h1>Jquery Thumbnail Generator</h3>
+        <p>This plugin resizes the image proportionally so it doesn't loose quality
+        showing as much as possible of the image inside a generated wrapper which "crops"
+        the image</p>
+        <h3>Parameters</h3>
+        <table>
+            <tr>
+                <th>Option</th>
+                <th>Type</th>
+                <th>Default</th>
+            </tr>
+            <tr>
+                <td><code>width</code></td>
+                <td><code>number</code></td>
+                <td><code>100</code></td>
+            </tr>
+            <tr>
+                <td><code>height</code></td>
+                <td><code>number</code></td>
+                <td><code>100</code></td>
+            </tr>
+            <tr>
+                <td><code>aligh</code></td>
+                <td><code>string</code></td>
+                <td><code>"middle"</code></td>
+            </tr>
+        </table>
+        <h3>How to Use</h3>
+        <p>Basic Usage</p>
+        <pre><code>
+$('img').thumbnail();
+
+&lt;img src="path/to/image.jpg" /&gt;
+        </code></pre>
+        <p>Example</p>
+        <div class="example">
+            <img src="http://3.bp.blogspot.com/-zMjr9o0a-E0/TYohdwcz9CI/AAAAAAAAAG8/Cy_D1a8XDrs/s640/Animals.jpg" class="thumb"/>
+        </div>
+        <p>Setting Default Parameters</p>
+        <pre><code>
+$('img').thumbnail({
+    width:150,
+    height:150,
+    align:"middle"
+});
+
+&lt;img src="path/to/image.jpg" /&gt;
+        </code></pre>
+        <p>Example</p>
+        <div class="example">
+            <img src="http://1.bp.blogspot.com/-vXo4Rcp3Z4Y/Ty5mEtmDmiI/AAAAAAAAALY/uBv1oXVOyQg/s640/Wild-animals-photos-Tiger.jpg" class="thumb1"/>
+        </div>
+        <p>Setting Parameters on single image</p>
+        <pre><code>
+$('img').thumbnail();
+
+&lt;img src="path/to/image.jpg" data-width="200" data-height="300" data-align="middle" /&gt;
+        </code></pre>
+        <p>Example</p>
+        <div class="example">
+            <ul class="grid">
+                <li><img src="http://3.bp.blogspot.com/-zMjr9o0a-E0/TYohdwcz9CI/AAAAAAAAAG8/Cy_D1a8XDrs/s640/Animals.jpg" data-width="150" class="thumb"/></li>
+                <li><img src="http://1.bp.blogspot.com/-vXo4Rcp3Z4Y/Ty5mEtmDmiI/AAAAAAAAALY/uBv1oXVOyQg/s640/Wild-animals-photos-Tiger.jpg"  data-height="150" class="thumb"/></li>
+                <li><img src="http://3.bp.blogspot.com/-sphN5AIwfG4/Ty5lfG-JzCI/AAAAAAAAALQ/3c4RnO2kqIk/s640/wild-animals-jaguar03.jpg" data-width="200" data-width="200" class="thumb"/></li>
+            </ul>
+        </div>
+        <p>Different align values</p>
+        <pre><code>
+$('img').thumbnail();
+
+&lt;img src="path/to/image.jpg" data-align="topleft" /&gt;
+&lt;img src="path/to/image.jpg" data-align="middle" /&gt;
+&lt;img src="path/to/image.jpg" data-align="bottomright" /&gt;
+        </code></pre>   
+        <p>Example</p>
+        <div class="example">
+            <ul class="grid">
+                <li><img src="http://3.bp.blogspot.com/-zMjr9o0a-E0/TYohdwcz9CI/AAAAAAAAAG8/Cy_D1a8XDrs/s640/Animals.jpg" data-align="topleft" class="thumb"/></li>
+                <li><img src="http://3.bp.blogspot.com/-zMjr9o0a-E0/TYohdwcz9CI/AAAAAAAAAG8/Cy_D1a8XDrs/s640/Animals.jpg"  data-align="middle" class="thumb"/></li>
+                <li><img src="http://3.bp.blogspot.com/-zMjr9o0a-E0/TYohdwcz9CI/AAAAAAAAAG8/Cy_D1a8XDrs/s640/Animals.jpg" data-align="bottomright" class="thumb"/></li>
+            </ul>
+        </div>     
+    </div>
+</body>
+</html>
